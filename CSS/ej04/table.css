@@ -1,0 +1,91 @@
+tr > td {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+td:nth-child(1) {
+    background-color: rgb(0, 0, 0);
+}
+
+td:nth-child(2) {
+    background-color: rgb(255, 0, 0);
+}
+
+td:nth-child(3) {
+    background-color: rgb(0, 255, 0);
+}
+
+td:nth-child(4) {
+    background-color: rgb(0, 0, 255);
+}
+
+td:nth-child(5) {
+    background-color: rgb(255, 255, 0);
+}
+
+tr:nth-child(1) {
+    background-color: rgb(255, 255, 255);
+}
+
+tr:nth-child(2) {
+    background-color: rgb(0, 217, 255);
+}
+
+tr:nth-child(3) {
+    background-color: rgb(255, 0, 255);
+}
+
+tr#rectangular > td {
+    height: 100px;
+}
+
+tr#redondo > td > div {
+    border-radius: 50%;
+    height: 50px;
+}
+
+tr#redondo > td:nth-child(1) > div {
+    background-color: rgb(0, 0, 0);
+}
+
+tr#redondo > td:nth-child(2) > div {
+    background-color: rgb(255, 0, 0);
+}
+
+tr#redondo > td:nth-child(3) > div {
+    background-color: rgb(0, 255, 0);
+}
+
+tr#redondo > td:nth-child(4) > div {
+    background-color: rgb(0, 0, 255);
+}
+
+tr#redondo > td:nth-child(5) > div {
+    background-color: rgb(255, 255, 0);
+}
+
+tr#redondo:nth-child(1) > td > div {
+    background-color: rgb(255, 255, 255);
+}
+
+tr#redondo > td:nth-child(1) {
+    background-color: rgb(255, 0, 0);
+}
+
+tr#redondo > td:nth-child(2) {
+    background-color: rgb(0, 255, 0);
+}
+
+tr#redondo > td:nth-child(3) {
+    background-color: rgb(0, 0, 255);
+}
+
+tr#redondo > td:nth-child(4) {
+    background-color: rgb(255, 255, 0);
+}
+
+tr#redondo > td:nth-child(5) {
+    background-color: rgb(0, 0, 0);
+}
