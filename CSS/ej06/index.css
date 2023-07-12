@@ -1,0 +1,80 @@
+section#grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: 1fr 2fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+section#grid > div {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    cursor: pointer;
+    border-width: 3px;
+}
+
+div:nth-child(1),
+div:nth-child(6),
+div:nth-child(11) {
+    background-color: rgb(0, 0, 0);
+    border-color: white;
+    border-style: solid;
+}
+
+div:nth-child(2),
+div:nth-child(7),
+div:nth-child(12) {
+    background-color: rgb(255, 0, 0);
+    border-color: black;
+    border-style: double;
+}
+
+div:nth-child(3),
+div:nth-child(8),
+div:nth-child(13) {
+    background-color: rgb(0, 255, 0);
+    border-color: rgb(255, 0, 0);
+    border-style: dotted;
+}
+
+div:nth-child(4),
+div:nth-child(9),
+div:nth-child(14) {
+    background-color: rgb(0, 0, 255);
+    border-color: rgb(0, 255, 0);
+    border-style: dashed;
+}
+
+div:nth-child(5n) {
+    background-color: rgb(255, 255, 0);
+    border-color: rgb(0, 0, 255);
+    border-style: inset;
+}
+
+section#grid > div:nth-child(n + 6) {
+    width: 50px;
+    height: 100px;
+}
+
+section#grid > div:nth-child(n + 11) {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+section#grid > div:nth-child(1),
+section#grid > div:nth-child(2),
+section#grid > div:nth-child(3),
+section#grid > div:nth-child(4),
+section#grid > div:nth-child(5) {
+    rotate: z 45deg;
+}
+
+section#grid > div:nth-child(1):hover,
+section#grid > div:nth-child(2):hover,
+section#grid > div:nth-child(3):hover,
+section#grid > div:nth-child(4):hover,
+section#grid > div:nth-child(5):hover {
+    rotate: z 0deg;
+}

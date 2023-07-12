@@ -1,8 +1,29 @@
-section {
-    display: flex;
+body {
+    margin: 0;
+    padding: 0;
 }
 
+section {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
 
+#primera {
+    justify-content: flex-start;
+}
+
+#segunda {
+    justify-content: flex-end;
+}
+
+#tercera {
+    justify-content: space-between;
+}
+
+#cuarta {
+    flex-direction: row-reverse;
+}
 
 section div {
     width: 50px;
