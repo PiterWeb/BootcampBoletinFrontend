@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+#sol {
+    width: 25vw;
+    height: 100vh;
+    background-color: orange;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: relative;
+    left: calc(25vw / 2 * -1);
+}
+
+.planeta {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: -60vw 0;
+    transform-style: preserve-3d;
+    animation: rotar 8s linear infinite;
+}
+
+.trail {
+    width: calc(100vw + 150px + 50%);
+    height: 200vh;
+    overflow: hidden;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: calc((100vw / 2 * -1) - 50%);
+    transform: translate(-50%, -50%) translateZ(-1px);
+    animation: none;
+}
+
+.planeta::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#mercurio {
+    left: 15%;
+}
+
+#mercurio::after {
+    content: "Mercurio";
+    position: absolute;
+    color: white;
+}
+
+#venus {
+    left: 25%;
+    top: 25%;
+    background-color: rgb(255, 255, 0);
+}
+
+#venus::after {
+    content: "Venus";
+    color: black;
+}
+
+#tierra {
+    left: 35%;
+    top: 75%;
+    background-color: rgb(20, 243, 113);
+}
+
+#tierra::after {
+    content: "Tierra";
+    color: black;
+}
+
+#luna {
+    animation: rotar 4s linear infinite;
+    position: relative;
+    top: 50%;
+}
+
+#luna::after {
+    content: "Luna";
+    color: white;
+    text-align: center;
+    line-height: 45px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(97, 97, 97);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(100% + 70px);
+}
+
+#marte {
+    left: 45%;
+    top: 25%;
+    background-color: red;
+}
+
+#marte::after {
+    content: "Marte";
+    color: white;
+}
+
+#jupiter {
+    left: 55%;
+    top: 75%;
+    background-color: rgb(255, 255, 0);
+}
+
+#jupiter::after {
+    content: "Jupiter";
+    color: black;
+}
+
+#saturno {
+    left: 65%;
+    background-color: rgb(255, 255, 0);
+}
+
+#saturno::after {
+    content: "Saturno";
+    color: black;
+}
+
+#urano {
+    left: 75%;
+    top: 25%;
+    background-color: rgb(0, 255, 255);
+}
+
+#urano::after {
+    content: "Urano";
+    color: black;
+}
+
+#neptuno {
+    left: 85%;
+    top: 75%;
+    background-color: rgb(0, 0, 255);
+}
+
+#neptuno::after {
+    content: "Neptuno";
+    color: rgb(255, 255, 255);
+}
+
+#pluton {
+    left: 95%;
+}
+
+#pluton::after {
+    content: "Pluton";
+    color: white;
+}
+
+@keyframes rotar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
