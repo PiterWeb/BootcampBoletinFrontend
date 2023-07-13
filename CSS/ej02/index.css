@@ -3,6 +3,7 @@ tr > td {
     height: 50px;
     display: inline-block;
     cursor: pointer;
+    border-radius: 14px;
 }
 
 td:nth-child(1) {
@@ -38,7 +39,7 @@ tr:nth-child(3) {
 }
 
 tr#rectangular > td {
-    height: 100px;
+    border-radius: 0;
 }
 
 tr#redondo > td {
