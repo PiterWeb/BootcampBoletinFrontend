@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ej03</title>
+
+        <link rel="stylesheet" href="index.css" />
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <form id="form">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="nombre" id="nombre" />
+            <label for="apellido1">Primer apellido</label>
+            <input
+                type="text"
+                name="apellido1"
+                placeholder="primer apellido"
+                id="apellido1"
+            />
+            <label for="apellido2">Segundo apellido</label>
+            <input
+                type="text"
+                name="apellido2"
+                placeholder="segundo apellido"
+                id="apellido2"
+            />
+            <hr />
+            <label for="tipo_via">Tipo de vía</label>
+            <select name="tipo_via" id="tipo_via">
+                <option value="calle">Calle</option>
+                <option value="avenida">Avenida</option>
+                <option value="camino">Camino</option>
+            </select>
+            <label for="via">Nombre de la vía</label>
+            <input
+                type="text"
+                name="via"
+                id="via"
+                placeholder="nombre de la vía"
+            />
+            <label for="codigo_postal">Código postal</label>
+            <input
+                type="number"
+                name="codigo_postal"
+                id="codigo_postal"
+                placeholder="código postal"
+            />
+            <label for="ciudad">Ciudad</label>
+            <select name="ciudad" id="ciudad">
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="valencia">Valencia</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="frankfurt">Frankfurt</option>
+                <option value="venecia">Venecia</option>
+                <option value="roma">Roma</option>
+                <option value="londres">Londres</option>
+                <option value="paris">París</option>
+                <option value="berlin">Berlín</option>
+                <option value="lisboa">Lisboa</option>
+            </select>
+
+            <select name="provincia" id="provincia">
+                <option value="madrid">Madrid</option>
+                <option value="barcelona">Barcelona</option>
+                <option value="valencia">Valencia</option>
+                <option value="sevilla">Sevilla</option>
+                <option value="frankfurt">Frankfurt</option>
+                <option value="venecia">Venecia</option>
+                <option value="roma">Roma</option>
+                <option value="londres">Londres</option>
+                <option value="paris">París</option>
+                <option value="berlin">Berlín</option>
+                <option value="lisboa">Lisboa</option>
+            </select>
+
+            <label for="pais">País</label>
+            <select name="pais" id="pais">
+                <option value="espana">España</option>
+                <option value="alemania">Alemania</option>
+                <option value="italia">Italia</option>
+                <option value="reino_unido">Reino Unido</option>
+                <option value="francia">Francia</option>
+                <option value="portugal">Portugal</option>
+            </select>
+
+            <hr />
+
+            <label for="nacimiento">Nacimiento</label>
+            <input type="date" name="nacimiento" id="nacimiento" />
+
+            <label for="nota_media_uni">Nota media universidad</label>
+            <input
+                type="number"
+                name="nota_media_uni"
+                id="nota_media_uni"
+                min="0"
+                max="10"
+            />
+
+            <label for="telefono">Teléfono</label>
+            <input
+                type="tel"
+                name="telefono"
+                id="telefono"
+                placeholder="Numero de Teléfono"
+            />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+
+            <label for="contraseña">Contraseña</label>
+            <input type="password" name="contraseña" id="contraseña" />
+
+            <label for="contraseña2">Repetir contraseña</label>
+            <input type="password" name="contraseña2" id="contraseña2" />
+
+            <hr />
+
+            <label for="pais_sel">Selecciona un país</label>
+            <select name="pais_sel" id="pais_sel">
+                <option value="espana">España</option>
+                <option value="andorra">Andorra</option>
+                <option value="francia">Francia</option>
+                <option value="portugal">Portugal</option>
+            </select>
+
+            <label for="cuenta">Tipo de cuenta</label>
+            <div id="cuenta_div">
+                <label for="gratuita">Gratuita</label>
+                <input
+                    type="radio"
+                    name="cuenta"
+                    id="cuenta"
+                    value="gratuita"
+                />
+
+                <span>
+                    La cuenta gratuita tiene las siguientes características : ..
+                </span>
+                <br />
+                <label for="cuenta">Básica</label>
+                <input type="radio" name="cuenta" id="cuenta" value="basica" />
+
+                <span>
+                    La cuenta básica tiene las siguientes características : ...
+                </span>
+                <br />
+                <label for="cuenta">Premium</label>
+                <input type="radio" name="cuenta" id="cuenta" value="premium" />
+
+                <span>
+                    La cuenta premium tiene las siguientes características : ...
+                </span>
+            </div>
+
+            <hr />
+
+            <label for="sobre_mi">Sobre mí:</label><br />
+            <textarea
+                name="sobre_mi"
+                id="sobre_mi"
+                cols="75"
+                rows="25"
+            ></textarea>
+            <hr>
+
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*">
+
+            <br>
+            
+            <label for="CV">CV: </label>
+            <input type="file" name="CV" id="CV" accept=".pdf">
+            <hr>
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>
