@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ej08</title>
+        <link rel="stylesheet" href="index.css" />
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <div id="alarma">0h 0m 0s</div>
+
+        <form id="form">
+            <input
+                type="number"
+                min="1"
+                id="tiempo"
+                name="time"
+                placeholder="Tiempo (segundos)"
+            />
+
+            <input type="submit" value="Iniciar" />
+        </form>
+
+        <button id="detener">Detener</button>
+
+        <dialog id="alerta">
+            <div>
+                <span>Ya ha sonado la alarma ⏰</span>
+
+                <button id="postponer">Postponer 10s</button>
+                <button id="cerrar">Cerrar</button>
+            </div>
+        </dialog>
+    </body>
+</html>
