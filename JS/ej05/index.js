@@ -3,14 +3,17 @@ const alerta = document.getElementById("alerta");
 const btnCerrarAlerta = document.getElementById("cerrar");
 const btnDetener = document.getElementById("detener");
 const btnPostponer = document.getElementById("postponer");
+const tiempoInput = document.getElementById("tiempo");
 
 const audio = new Audio("alarma.mp3");
+audio.loop = true;
 
 btnCerrarAlerta.addEventListener("click", () => {
     alerta.close();
     audio.pause();
     audio.currentTime = 0;
     btnDetener.style.display = "none";
+    tiempoInput.readOnly = false;
 });
 
 btnPostponer.addEventListener("click", () => {
@@ -28,6 +31,7 @@ form.addEventListener("submit", (e) => {
     let time = formData.get("time");
 
     manejarAlarma(time);
+    form.reset();
 });
 
 function manejarAlarma(time) {
@@ -43,37 +47,49 @@ function manejarAlarma(time) {
 
     const alarma = document.getElementById("alarma");
 
-    let hours = Math.floor(time / 3600);
-    let minutes = Math.floor((time % 3600) / 60);
-    let seconds = time % 60;
+    btnDetener.style.display = "block";
+    tiempoInput.readOnly = true;
+
+    let initTime = Date.now();
+    let alarmTime = initTime - Date.now() + time * 1000;
+    alarmTime /= 1000;
+    alarmTime = Math.ceil(alarmTime) * 1000;
+    alarmTime = new Date(alarmTime);
+
+    let hours = Math.abs(alarmTime.getHours() - 1);
+    let minutes = alarmTime.getMinutes();
+    let seconds = alarmTime.getSeconds();
 
     alarma.innerText = `${hours}h ${minutes}m ${seconds}s`;
 
-    form.reset();
-
-    btnDetener.style.display = "block";
-
     const interval = setInterval(() => {
-        time--;
+        let alarmTime = initTime - Date.now() + time * 1000;
+        alarmTime /= 1000;
+        alarmTime = Math.ceil(alarmTime) * 1000;
+        alarmTime = new Date(alarmTime);
 
-        hours = Math.floor(time / 3600);
-        minutes = Math.floor((time % 3600) / 60);
-        seconds = time % 60;
+        hours = Math.abs(alarmTime.getHours() - 1);
+        minutes = alarmTime.getMinutes();
+        seconds = alarmTime.getSeconds();
 
         alarma.innerText = `${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
+
+    function detenerAlarma() {
+        clearInterval(interval);
+        clearTimeout(timeout);
+        alarma.innerText = "0h 0m 0s";
+        btnDetener.style.display = "none";
+        tiempoInput.readOnly = false;
+        btnDetener.removeEventListener("click", detenerAlarma);
+    }
+
+    btnDetener.addEventListener("click", detenerAlarma);
 
     const timeout = setTimeout(() => {
         clearInterval(interval);
         alerta.showModal();
         audio.play();
+        btnDetener.removeEventListener("click", detenerAlarma);
     }, time * 1000);
-
-    btnDetener.addEventListener("click", () => {
-        clearInterval(interval);
-        clearTimeout(timeout);
-        alarma.innerText = "0h 0m 0s";
-        btnDetener.style.display = "none";
-        btnDetener.removeEventListener("click", () => {});
-    });
 }

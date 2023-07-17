@@ -1,14 +1,16 @@
-const now = document.getElementsByClassName("now");
+let now = document.querySelectorAll(".now");
 
-for (let i = 0; i < now.length; i++) {
-    const element = now[i];
+setInterval(() => {
+    now = document.querySelectorAll(".now");
 
-    setInterval(() => {
-        const fecha = new Date();
-        const hora = fecha.getHours();
-        const minutos = fecha.getMinutes().toString().padStart(2, "0");
-        const segundos = fecha.getSeconds().toString().padStart(2, "0");
+    now.forEach((element) => {
+        setInterval(() => {
+            const fecha = new Date();
+            element.innerText =
+                fecha.toLocaleDateString() + " - " + fecha.toLocaleTimeString();
+        }, 1000);
+    });
+}, 1000);
 
-        element.innerText = `${hora}:${minutos}:${segundos}`;
-    }, 1000);
-}
+// Buscar los elementos con la clase "now"
+// Obtener la fecha actual
