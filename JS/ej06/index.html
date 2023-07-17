@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej06</title>
-    <script defer src="index.js"></script>
-</head>
-<body>
-    
-    <div id="imagenes">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ej06</title>
+        <link rel="stylesheet" href="index.css" />
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <h1>Imagenes</h1>
+        <fieldset>
+            <div id="images"></div>
+        </fieldset>
 
-    </div>
+        <button id="add">Añadir</button>
 
-    <button id="add">Añadir</button>
-
-    <div>
-        <input type="number" id="">
-        <button id="remove">Eliminar</button>
-    </div>
-
-</body>
+        <div>
+            <input
+                placeholder="Número de la imagen a borrar"
+                type="number"
+                id="number-to-del"
+                min="1"
+                max="1"
+            />
+            <button id="remove">Eliminar</button>
+        </div>
+    </body>
 </html>
