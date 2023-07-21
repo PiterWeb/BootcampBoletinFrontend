@@ -10,7 +10,7 @@ btnAdd.addEventListener("click", () => {
     if (nImages >= 5) return;
 
     const img = document.createElement("img");
-    img.src = "https://picsum.photos/300/300";
+    img.src = "https://picsum.photos/300/300?random=" + Math.random();
     img.alt = "Random image " + nImages;
 
     imgContainer.appendChild(img);
