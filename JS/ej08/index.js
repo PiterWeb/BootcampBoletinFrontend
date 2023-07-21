@@ -1,6 +1,6 @@
 const tableBody = document.getElementById("table-body");
 
-const usuarios = JSON.parse(localStorage.getItem("formulario-data"));
+const usuarios = JSON.parse(localStorage.getItem("formulario-data") || "[]");
 
 if (!(usuarios instanceof Array)) {
     throw new Error("No hay usuarios");
@@ -9,16 +9,8 @@ if (!(usuarios instanceof Array)) {
 console.table(usuarios);
 
 usuarios.forEach((usuario, i) => {
-    
-    const {
-        nombre,
-        apellido1,
-        apellido2,
-        pais_sel,
-        cuenta,
-        telefono,
-        email,
-    } = usuario;
+    const { nombre, apellido1, apellido2, pais_sel, cuenta, telefono, email } =
+        usuario;
 
     const row = document.createElement("tr");
 
