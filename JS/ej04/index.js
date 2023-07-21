@@ -1,14 +1,10 @@
-let now = document.querySelectorAll(".now");
-
 setInterval(() => {
-    now = document.querySelectorAll(".now");
+    let now = document.querySelectorAll(".now");
 
     now.forEach((element) => {
-        setInterval(() => {
-            const fecha = new Date();
-            element.innerText =
-                fecha.toLocaleDateString() + " - " + fecha.toLocaleTimeString();
-        }, 1000);
+        const fecha = new Date();
+        element.innerText =
+            fecha.toLocaleDateString() + " - " + fecha.toLocaleTimeString();
     });
 }, 1000);
 
