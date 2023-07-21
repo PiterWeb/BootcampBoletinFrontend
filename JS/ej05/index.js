@@ -4,6 +4,7 @@ const btnCerrarAlerta = document.getElementById("cerrar");
 const btnDetener = document.getElementById("detener");
 const btnPostponer = document.getElementById("postponer");
 const tiempoInput = document.getElementById("tiempo");
+const alarma = document.getElementById("alarma");
 
 const audio = new Audio("alarma.mp3");
 audio.loop = true;
@@ -44,8 +45,6 @@ function manejarAlarma(time) {
         alert("El tiempo no puede ser negativo o cero");
         return;
     }
-
-    const alarma = document.getElementById("alarma");
 
     btnDetener.style.display = "block";
     tiempoInput.readOnly = true;
