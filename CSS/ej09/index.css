@@ -16,11 +16,11 @@ body {
 }
 
 .planeta {
+    position: absolute;
     width: 100px;
     height: 100px;
     background-color: green;
     border-radius: 50%;
-    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     transform-style: preserve-3d;
@@ -29,15 +29,15 @@ body {
 }
 
 .trail {
-    width: calc(100vw + 150px + 50%);
+    position: absolute;
+    width: 110vw;
     height: 200vh;
     overflow: hidden;
     border-left: 2px solid white;
     border-right: 2px solid white;
     border-radius: 50%;
-    position: absolute;
     top: 50%;
-    left: calc((100vw / 2 * -1) - 50%);
+    left: calc(25vw / 2 * -3);
     transform: translate(-50%, -50%) translateZ(-1px);  
 }
 
@@ -50,6 +50,7 @@ body {
 
 #mercurio {
     left: 15%;
+    animation-duration: 9s;
 }
 
 #mercurio::after {
@@ -58,10 +59,15 @@ body {
     color: white;
 }
 
+#trail-mercurio {
+    left: calc(15% - 55vw + 50px);
+}
+
 #venus {
     left: 25%;
-    top: 25%;
     background-color: rgb(255, 255, 0);
+    animation-duration: 7s;
+
 }
 
 #venus::after {
@@ -69,15 +75,24 @@ body {
     color: black;
 }
 
+#trail-venus {
+    left: calc(25% - 55vw + 50px);
+}
+
 #tierra {
     left: 35%;
-    top: 75%;
     background-color: rgb(20, 243, 113);
+    animation-duration: 5s;
+
 }
 
 #tierra::after {
     content: "Tierra";
     color: black;
+}
+
+#trail-tierra {
+    left: calc(35% - 55vw + 50px);
 }
 
 #luna {
@@ -101,8 +116,8 @@ body {
 
 #marte {
     left: 45%;
-    top: 25%;
     background-color: red;
+
 }
 
 #marte::after {
@@ -110,10 +125,15 @@ body {
     color: white;
 }
 
+#trail-marte {
+    left: calc(45% - 55vw + 50px);
+}
+
 #jupiter {
     left: 55%;
-    top: 75%;
     background-color: rgb(255, 255, 0);
+    animation-duration: 10s;
+
 }
 
 #jupiter::after {
@@ -121,9 +141,15 @@ body {
     color: black;
 }
 
+#trail-jupiter {
+    left: calc(55% - 55vw + 50px);
+}
+
 #saturno {
     left: 65%;
     background-color: rgb(255, 255, 0);
+    animation-duration: 11s;
+
 }
 
 #saturno::after {
@@ -131,10 +157,15 @@ body {
     color: black;
 }
 
+#trail-saturno {
+    left: calc(65% - 55vw + 50px);
+}
+
 #urano {
     left: 75%;
-    top: 25%;
     background-color: rgb(0, 255, 255);
+    animation-duration: 12s;
+
 }
 
 #urano::after {
@@ -142,15 +173,23 @@ body {
     color: black;
 }
 
+#trail-urano {
+    left: calc(75% - 55vw + 50px);
+}
+
 #neptuno {
     left: 85%;
-    top: 75%;
     background-color: rgb(0, 0, 255);
+    animation-duration: 14s;
 }
 
 #neptuno::after {
     content: "Neptuno";
     color: rgb(255, 255, 255);
+}
+
+#trail-neptuno {
+    left: calc(85% - 55vw + 50px);
 }
 
 #pluton {
@@ -160,6 +199,10 @@ body {
 #pluton::after {
     content: "Pluton";
     color: white;
+}
+
+#trail-pluton {
+    left: calc(95% - 55vw + 50px);
 }
 
 @keyframes rotar {
