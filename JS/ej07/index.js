@@ -12,6 +12,8 @@ form.addEventListener("submit", () => {
         "formulario-data",
         JSON.stringify([...lastData, data])
     );
+
+    form.reset();
 });
 
 console.log("Javier");
